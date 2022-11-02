@@ -1,19 +1,15 @@
-import next, { GetStaticPropsContext, InferGetServerSidePropsType } from "next";
-import Link from "next/link";
-import Header from "../../components/Header";
-import Main from "../../components/Main";
+import { GetStaticPropsContext, InferGetServerSidePropsType } from "next";
+import ProductLayout from "../../components/ProductLayout";
 import { ProductListItem } from "../../components/Product";
 import React from "react";
-import Footer from "../../components/Footer";
 import PaginationSSG from "../../components/PaginationSSG";
 
 const Page = ({ data }: InferGetServerSidePropsType<typeof getStaticProps>) => {
   return (
-    <>
-      <Header />
-      <Main>
+    <div className="flex flex-col flex-grow">
+      <ProductLayout>
         {data?.map((product) => (
-          <li key={product.id} className="shadow-xl border-2 ">
+          <li key={product.id}>
             <ProductListItem
               data={{
                 id: product.id,
@@ -26,11 +22,9 @@ const Page = ({ data }: InferGetServerSidePropsType<typeof getStaticProps>) => {
             />
           </li>
         ))}
-      </Main>
-      <Footer>
-        <PaginationSSG />
-      </Footer>
-    </>
+      </ProductLayout>
+      <PaginationSSG />
+      </div>
   );
 };
 

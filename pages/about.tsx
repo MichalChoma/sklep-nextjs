@@ -1,14 +1,10 @@
-import Main from "../components/Main";
+import ProductLayout from "../components/ProductLayout";
 import React from "react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 
 const About = () => {
-  return <div className="flex min-h-screen flex-col">
-    <Header />
-    <Main>Cześć michal</Main>
-    <Footer/>
-  </div>;
+  return <ProductLayout>Cześć michal</ProductLayout>;
 };
 
 export default About;

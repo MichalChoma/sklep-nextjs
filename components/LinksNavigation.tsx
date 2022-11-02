@@ -16,20 +16,21 @@ const links = [
     text: "SSG",
   },
   {
-    href: "/productsCsr",
+    href: "/Csr",
     text: "CSR",
   },
 ];
 
 const LinksNavigation = () => {
   const router = useRouter();
+  console.log(router.pathname.slice(0,4))
   return (
     <div className="mr-4 hidden sm:flex">
       {links.map((link) => (
         <Link href={link.href} key={link.href}>
           <a
             className={
-              router.pathname === link.href
+              router.pathname.slice(0,4) === link.href.slice(0,4)
                 ? "mx-2 p-2 rounded-xl bg-gray-300 text-sm font-medium"
                 : "mx-2 p-2 rounded-xl text-sm hover:bg-gray-200 font-medium"
             }

@@ -8,7 +8,8 @@ const router = useRouter();
   const prevPage = page - 1;
   const nextPage = page + 1;
   return (
-    <div className="flex justify-evenly items-center">
+    
+    <div className="w-100 bg-slate-50 flex justify-center items-center p-6">
             <Link href={page === 1 ? "/products/1" : `/products/${prevPage}`}>
               <a className="inline-flex items-center py-2 px-4 text-sm font-medium text-gray-500 bg-white rounded-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700">
                 <svg
@@ -47,6 +48,7 @@ const router = useRouter();
               </a>
             </Link>
           </div>
+  
   )
 }
 

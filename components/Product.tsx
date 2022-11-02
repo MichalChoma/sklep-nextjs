@@ -24,7 +24,7 @@ interface ProductListItemProps {
 
 export const ProductDetails = ({ data }: ProductProps) => {
   return (
-    <div className="flex justify-center flex-col max-w-2xl mx-auto">
+    <div className="flex flex-col max-w-2xl mx-auto">
       <Image
             src={data.thumbnailUrl}
             alt={data.title}
@@ -46,7 +46,7 @@ export const ProductListItem = ({ data }: ProductListItemProps) => {
   return (
     <Link href={`/${data.id}`}>
       <a>
-        <div className="bg-white w-full h-full flex justify-center flex-col p-4 text-center">
+        <div className="bg-white w-full h-full flex justify-center flex-col p-4 text-center border-2 shadow-sm">
           <Image
             src={data.thumbnailUrl}
             alt={data.title}

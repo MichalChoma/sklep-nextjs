@@ -2,7 +2,7 @@ import { InferGetStaticPropsType } from 'next'
 import { ProductListItem } from '../components/Product'
 import React from 'react'
 import Header from '../components/Header'
-import Main from '../components/Main'
+import ProductLayout from '../components/ProductLayout'
 
 // komponent reactowy, dostaje propsy z getStaticProps, ale tylko wtedy gdy jest to oddzielna najwyzsza strona (krok 2)
 const Products = ({data} : InferGetStaticPropsType<typeof getStaticProps>) => { //ctrl + spacja ts podpowiedzi
@@ -10,7 +10,7 @@ const Products = ({data} : InferGetStaticPropsType<typeof getStaticProps>) => { 
   return (
     <>
     <Header />
-    <Main>
+    <ProductLayout>
         {data.map((product) => (
             <li key={product.id} className="shadow-xl border-2">
             <ProductListItem data={{
@@ -23,7 +23,7 @@ const Products = ({data} : InferGetStaticPropsType<typeof getStaticProps>) => { 
             }}/>
             </li>
         ))}
-    </Main>
+    </ProductLayout>
     </>
   )
 
